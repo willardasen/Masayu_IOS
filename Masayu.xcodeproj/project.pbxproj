@@ -20,6 +20,7 @@
 		05C1EAE42B1095B7009D9B42 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C1EAE32B1095B7009D9B42 /* CategoryCollectionViewCell.swift */; };
 		05C1EAE82B1097A8009D9B42 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C1EAE72B1097A8009D9B42 /* CategoryTableViewCell.swift */; };
 		05C1EAEA2B109B31009D9B42 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C1EAE92B109B31009D9B42 /* data.swift */; };
+		05C1EAEC2B10AEA6009D9B42 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C1EAEB2B10AEA6009D9B42 /* HomeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		05C1EAE32B1095B7009D9B42 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		05C1EAE72B1097A8009D9B42 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		05C1EAE92B109B31009D9B42 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
+		05C1EAEB2B10AEA6009D9B42 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				05C1EADD2B108255009D9B42 /* HomeViewController.swift */,
 				05C1EAE32B1095B7009D9B42 /* CategoryCollectionViewCell.swift */,
 				05C1EAE72B1097A8009D9B42 /* CategoryTableViewCell.swift */,
+				05C1EAEB2B10AEA6009D9B42 /* HomeTableViewCell.swift */,
 			);
 			path = Masayu;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				050047722B105874003F018F /* AppDelegate.swift in Sources */,
 				05C1EAEA2B109B31009D9B42 /* data.swift in Sources */,
 				050047742B105874003F018F /* SceneDelegate.swift in Sources */,
+				05C1EAEC2B10AEA6009D9B42 /* HomeTableViewCell.swift in Sources */,
 				05C1EADE2B108255009D9B42 /* HomeViewController.swift in Sources */,
 				05C1EAE82B1097A8009D9B42 /* CategoryTableViewCell.swift in Sources */,
 				05C1EAD92B106E93009D9B42 /* RegisterViewController.swift in Sources */,

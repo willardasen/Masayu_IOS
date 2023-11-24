@@ -392,7 +392,7 @@
         <!--Home-->
         <scene sceneID="FJm-V2-p21">
             <objects>
-                <viewController id="Lkk-N5-Zme" sceneMemberID="viewController">
+                <viewController id="Lkk-N5-Zme" customClass="HomeViewController" customModule="Masayu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dEj-Yh-kAM">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -401,7 +401,7 @@
                                 <rect key="frame" x="0.0" y="203" width="393" height="566"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="151" id="c2X-2J-Hwt">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="151" id="c2X-2J-Hwt" customClass="HomeTableViewCell" customModule="Masayu" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="151"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c2X-2J-Hwt" id="F2U-Oq-a9n">
