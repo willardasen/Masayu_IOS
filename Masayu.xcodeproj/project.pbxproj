@@ -21,6 +21,7 @@
 		05C1EAE82B1097A8009D9B42 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C1EAE72B1097A8009D9B42 /* CategoryTableViewCell.swift */; };
 		05C1EAEA2B109B31009D9B42 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C1EAE92B109B31009D9B42 /* data.swift */; };
 		05C1EAEC2B10AEA6009D9B42 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C1EAEB2B10AEA6009D9B42 /* HomeTableViewCell.swift */; };
+		05C1EAF02B15C746009D9B42 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C1EAEF2B15C746009D9B42 /* TabViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		05C1EAE72B1097A8009D9B42 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		05C1EAE92B109B31009D9B42 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
 		05C1EAEB2B10AEA6009D9B42 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		05C1EAEF2B15C746009D9B42 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				05C1EAE32B1095B7009D9B42 /* CategoryCollectionViewCell.swift */,
 				05C1EAE72B1097A8009D9B42 /* CategoryTableViewCell.swift */,
 				05C1EAEB2B10AEA6009D9B42 /* HomeTableViewCell.swift */,
+				05C1EAEF2B15C746009D9B42 /* TabViewController.swift */,
 			);
 			path = Masayu;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05C1EAF02B15C746009D9B42 /* TabViewController.swift in Sources */,
 				05C1EAE42B1095B7009D9B42 /* CategoryCollectionViewCell.swift in Sources */,
 				050047762B105874003F018F /* ViewController.swift in Sources */,
 				050047722B105874003F018F /* AppDelegate.swift in Sources */,
