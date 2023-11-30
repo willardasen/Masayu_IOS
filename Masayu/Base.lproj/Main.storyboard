@@ -108,6 +108,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="loginBtn:" destination="T0d-XZ-anD" eventType="touchUpInside" id="Kzc-ei-qCo"/>
                                     <segue destination="vZT-fp-urH" kind="show" id="uVJ-Y4-uYX"/>
                                 </connections>
                             </button>
@@ -212,6 +213,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jet-Db-jLV"/>
+                    <connections>
+                        <outlet property="loginTxt" destination="Ezy-HB-Zkr" id="XsJ-4W-rA3"/>
+                        <outlet property="passwordTxt" destination="UFV-R1-elx" id="VeT-Dv-REh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LKG-db-lEn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -547,6 +552,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="RvQ-In-shi"/>
         <segue reference="Gfn-fY-ZhH"/>
     </inferredMetricsTieBreakers>
     <resources>
