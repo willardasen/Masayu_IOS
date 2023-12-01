@@ -259,6 +259,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="registerBtn:" destination="nMI-w6-eO5" eventType="touchUpInside" id="cNa-YW-sWA"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KvY-uZ-vzw">
                                 <rect key="frame" x="72" y="666" width="200" height="54"/>
@@ -392,6 +395,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="K0u-fF-MV6"/>
+                    <connections>
+                        <outlet property="emailTxt" destination="9Yg-YM-jci" id="pu2-ji-VA6"/>
+                        <outlet property="passwordTxt" destination="4wS-09-TdN" id="iyf-3I-hLw"/>
+                        <outlet property="usernameTxt" destination="cAQ-wk-X0V" id="l3I-I3-afY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F2P-n5-HCd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -552,7 +560,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="RvQ-In-shi"/>
         <segue reference="Gfn-fY-ZhH"/>
     </inferredMetricsTieBreakers>
     <resources>
