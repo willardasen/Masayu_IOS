@@ -86,7 +86,7 @@ class RegisterViewController: UIViewController {
     func fetchUserData(){
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         do{
-            var results = try context.fetch(request) as! [NSManagedObject]
+            let results = try context.fetch(request) as! [NSManagedObject]
             for data in results{
                 arrUser.append(data.value(forKey: "email") as! String)
             }

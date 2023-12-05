@@ -30,10 +30,6 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
     }
     
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

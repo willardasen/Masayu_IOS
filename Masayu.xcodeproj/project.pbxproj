@@ -15,10 +15,10 @@
 		0500477E2B105875003F018F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0500477D2B105875003F018F /* Assets.xcassets */; };
 		050047812B105875003F018F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0500477F2B105875003F018F /* LaunchScreen.storyboard */; };
 		0500478B2B106B5C003F018F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0500478A2B106B5C003F018F /* LoginViewController.swift */; };
+		0599AB282B1EDB9D000689E1 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0599AB272B1EDB9D000689E1 /* CartViewController.swift */; };
+		0599AB2A2B1EDBC0000689E1 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0599AB292B1EDBC0000689E1 /* CartTableViewCell.swift */; };
 		05C1EAD92B106E93009D9B42 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C1EAD82B106E93009D9B42 /* RegisterViewController.swift */; };
 		05C1EADE2B108255009D9B42 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C1EADD2B108255009D9B42 /* HomeViewController.swift */; };
-		05C1EAE42B1095B7009D9B42 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C1EAE32B1095B7009D9B42 /* CategoryCollectionViewCell.swift */; };
-		05C1EAE82B1097A8009D9B42 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C1EAE72B1097A8009D9B42 /* CategoryTableViewCell.swift */; };
 		05C1EAEA2B109B31009D9B42 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C1EAE92B109B31009D9B42 /* data.swift */; };
 		05C1EAEC2B10AEA6009D9B42 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C1EAEB2B10AEA6009D9B42 /* HomeTableViewCell.swift */; };
 		05C1EAF02B15C746009D9B42 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C1EAEF2B15C746009D9B42 /* TabViewController.swift */; };
@@ -35,10 +35,10 @@
 		050047802B105875003F018F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		050047822B105875003F018F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0500478A2B106B5C003F018F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0599AB272B1EDB9D000689E1 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		0599AB292B1EDBC0000689E1 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		05C1EAD82B106E93009D9B42 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		05C1EADD2B108255009D9B42 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		05C1EAE32B1095B7009D9B42 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
-		05C1EAE72B1097A8009D9B42 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		05C1EAE92B109B31009D9B42 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
 		05C1EAEB2B10AEA6009D9B42 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		05C1EAEF2B15C746009D9B42 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
@@ -86,10 +86,10 @@
 				0500478A2B106B5C003F018F /* LoginViewController.swift */,
 				05C1EAD82B106E93009D9B42 /* RegisterViewController.swift */,
 				05C1EADD2B108255009D9B42 /* HomeViewController.swift */,
-				05C1EAE32B1095B7009D9B42 /* CategoryCollectionViewCell.swift */,
-				05C1EAE72B1097A8009D9B42 /* CategoryTableViewCell.swift */,
 				05C1EAEB2B10AEA6009D9B42 /* HomeTableViewCell.swift */,
 				05C1EAEF2B15C746009D9B42 /* TabViewController.swift */,
+				0599AB272B1EDB9D000689E1 /* CartViewController.swift */,
+				0599AB292B1EDBC0000689E1 /* CartTableViewCell.swift */,
 			);
 			path = Masayu;
 			sourceTree = "<group>";
@@ -166,14 +166,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				05C1EAF02B15C746009D9B42 /* TabViewController.swift in Sources */,
-				05C1EAE42B1095B7009D9B42 /* CategoryCollectionViewCell.swift in Sources */,
 				050047762B105874003F018F /* ViewController.swift in Sources */,
 				050047722B105874003F018F /* AppDelegate.swift in Sources */,
+				0599AB2A2B1EDBC0000689E1 /* CartTableViewCell.swift in Sources */,
 				05C1EAEA2B109B31009D9B42 /* data.swift in Sources */,
 				050047742B105874003F018F /* SceneDelegate.swift in Sources */,
 				05C1EAEC2B10AEA6009D9B42 /* HomeTableViewCell.swift in Sources */,
 				05C1EADE2B108255009D9B42 /* HomeViewController.swift in Sources */,
-				05C1EAE82B1097A8009D9B42 /* CategoryTableViewCell.swift in Sources */,
+				0599AB282B1EDB9D000689E1 /* CartViewController.swift in Sources */,
 				05C1EAD92B106E93009D9B42 /* RegisterViewController.swift in Sources */,
 				0500478B2B106B5C003F018F /* LoginViewController.swift in Sources */,
 				0500477C2B105874003F018F /* Masayu.xcdatamodeld in Sources */,

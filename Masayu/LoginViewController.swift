@@ -10,19 +10,19 @@ import CoreData
 
 
 
-struct userData {
+struct user {
     var email: String
+    var username: String
     var password: String
 }
 
 class LoginViewController: UIViewController {
     
-    //let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    var arrUserData = [userData]()
+    var arrUser = [user]()
 
     var context: NSManagedObjectContext!
-    
+
     @IBOutlet weak var emailTxt: UITextField!
     
     @IBOutlet weak var passwordTxt: UITextField!
@@ -54,20 +54,30 @@ class LoginViewController: UIViewController {
             showAlert(title: "Email is not valid", message: "Email must contain @ and ends with .com")
         }
 
+        for user in arrUser {
+            if(user.email != email || user.password != password){
+                showAlert(title: "Invalid Credential", message: "Email or Password is wrong")
+            }
+        }
+        
+        
     }
     
-//    func fetchUserData(){
-//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-//        do{
-//            var results = try context.fetch(request) as! [NSManagedObject]
-//            for data in results{
-//                arrUserData.append(userData(email: data.value(forKey: "email") as! String, password: data.value(forKey: "password") as! String))
-//            }
-//            print("Fetching successful")
-//        }catch{
-//            print("Fetching failed")
-//        }
-//    }
+    func fetchUserData(){
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        do{
+            var results = try context.fetch(request) as! [NSManagedObject]
+            for data in results{
+                arrUser.append(user(email: data.value(forKey: "email") as! String,
+                                    username: data.value(forKey: "username") as! String,
+                                    password: data.value(forKey: "password")as! String)
+                )
+            }
+            print("Fetching successful")
+        }catch{
+            print("Fetching failed")
+        }
+    }
     
     
     func showAlert(title: String,message: String) {
