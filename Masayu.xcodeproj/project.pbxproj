@@ -22,6 +22,7 @@
 		05C1EAEA2B109B31009D9B42 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C1EAE92B109B31009D9B42 /* data.swift */; };
 		05C1EAEC2B10AEA6009D9B42 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C1EAEB2B10AEA6009D9B42 /* HomeTableViewCell.swift */; };
 		05C1EAF02B15C746009D9B42 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C1EAEF2B15C746009D9B42 /* TabViewController.swift */; };
+		05D6B7002B218A9600AB870C /* FoodDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D6B6FF2B218A9600AB870C /* FoodDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		05C1EAE92B109B31009D9B42 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
 		05C1EAEB2B10AEA6009D9B42 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		05C1EAEF2B15C746009D9B42 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		05D6B6FF2B218A9600AB870C /* FoodDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				05C1EAEF2B15C746009D9B42 /* TabViewController.swift */,
 				0599AB272B1EDB9D000689E1 /* CartViewController.swift */,
 				0599AB292B1EDBC0000689E1 /* CartTableViewCell.swift */,
+				05D6B6FF2B218A9600AB870C /* FoodDetailViewController.swift */,
 			);
 			path = Masayu;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05C1EAF02B15C746009D9B42 /* TabViewController.swift in Sources */,
+				05D6B7002B218A9600AB870C /* FoodDetailViewController.swift in Sources */,
 				050047762B105874003F018F /* ViewController.swift in Sources */,
 				050047722B105874003F018F /* AppDelegate.swift in Sources */,
 				0599AB2A2B1EDBC0000689E1 /* CartTableViewCell.swift in Sources */,

@@ -31,6 +31,8 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
         
+        fetchUserData()
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         context = appDelegate.persistentContainer.viewContext
@@ -39,7 +41,7 @@ class LoginViewController: UIViewController {
 
     @IBAction func loginBtn(_ sender: Any) {
         
-//        fetchUserData()
+        
         
         guard let email = emailTxt.text, !email.isEmpty else {
             showAlert(title: "Email is empty", message: "Email must not be empty")
