@@ -8,11 +8,13 @@
 import UIKit
 
 class TabViewController: UITabBarController {
+    
+    var emailCurrent: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
-
+        print("Current email msk hahahaha: " + emailCurrent)
         // Do any additional setup after loading the view.
     }
     

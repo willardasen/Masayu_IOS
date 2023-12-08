@@ -10,6 +10,8 @@ import CoreData
 
 class HomeTableViewCell: UITableViewCell {
     
+    // masi salah
+    
     var context: NSManagedObjectContext!
     
     @IBOutlet weak var imgFood: UIImageView!
@@ -20,33 +22,16 @@ class HomeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var labelPrice: UILabel!
     
+    var handleInsert = {
+        
+    }
+    
     @IBAction func addToCartBtn(_ sender: Any) {
-        let nameText = labelName.text!
-        let priceText = labelDistance.text!
-        let imageString = "Ayam Betutu" // nanti diganti
-        
-        let entityTarget = NSEntityDescription.entity(forEntityName: "UserCart", in: context)
-        
-        let newCart = NSManagedObject(entity: entityTarget!, insertInto: context)
-        
-        newCart.setValue(nameText, forKey: "food")
-        newCart.setValue(Int(priceText), forKey: "price")
-        newCart.setValue(imageString, forKey: "image")
-        newCart.setValue("wil@gmail.com", forKey: "email")
-        
-        do {
-            try context.save()
-            print("Added to cart")
-        } catch {
-            print("Error while adding to cart")
-        }
+        self.handleInsert()
     }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
-        context = appDelegate.persistentContainer.viewContext
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {   

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import CoreData
 
 struct food {
     var name: String?
@@ -21,6 +21,8 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
     @IBOutlet weak var tvFood: UITableView!
     
     var arrFood = [food]()
+    
+    var context: NSManagedObjectContext!
 
     var nameTemp: String? = ""
     var priceTemp: String? = ""
@@ -41,10 +43,35 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
         super.viewDidLoad()
         
         initFood()
+        storeData()
         tvFood.dataSource = self
         tvFood.delegate = self
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        context = appDelegate.persistentContainer.viewContext
 
         // Do any additional setup after loading the view.
+    }
+    
+    func storeData(){
+        
+        let entityTarget = NSEntityDescription.entity(forEntityName: "Food", in: context)
+        
+        let newFood = NSManagedObject(entity: entityTarget!, insertInto: context)
+        
+        for food in arrFood {
+            newFood.setValue(food.name, forKey: "foodName")
+            newFood.setValue(food.image, forKey: "image")
+            newFood.setValue(food.price, forKey: "price")
+        }
+        
+        do{
+            try context.save()
+            print("Save success")
+        }catch{
+            print("Error saving")
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -76,20 +103,46 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! HomeTableViewCell
         
-        cell.labelName.text = arrFood[indexPath.row].name
-        cell.labelDistance.text = arrFood[indexPath.row].distance
-        cell.labelPrice.text = "Rp. \(arrFood[indexPath.row].price)"
-        cell.imgFood.image = UIImage(named: arrFood[indexPath.row].image!)
+        let cellName = arrFood[indexPath.row].name
+        let cellDistance = arrFood[indexPath.row].distance
+        let cellPrice = "Rp. \(arrFood[indexPath.row].price)"
+        let cellImage = arrFood[indexPath.row].image
+        
+        cell.labelName.text = cellName
+        cell.labelDistance.text = cellDistance
+        cell.labelPrice.text = cellPrice
+        cell.imgFood.image = UIImage(named: cellImage!)
+        
+        let tabBar = tabBarController as! HomeTabBarController
+        
+        cell.handleInsert = {
+            let entityTarget = NSEntityDescription.entity(forEntityName: "Cart", in: self.context)
+            
+            let newCart = NSManagedObject(entity: entityTarget!, insertInto: self.context)
+            
+            newCart.setValue(tabBar.emailCurrent, forKey: "email")
+            newCart.setValue(cellName, forKey: "foodName")
+            newCart.setValue(cellPrice, forKey: "price")
+            newCart.setValue(cellImage, forKey: "image")
+            
+            do {
+                try self.context.save()
+                print("Added to cart")
+            } catch {
+                print("Error while adding to cart")
+            }
+        }
+        
         
         return cell
     }
-    
-    
 
+    
     
 
 }
+

@@ -31,6 +31,8 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
         
+        initDummy()
+        
         fetchUserData()
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -39,9 +41,12 @@ class LoginViewController: UIViewController {
     }
     
 
+    func initDummy(){
+        arrUser.append(user(email: "dummy@gmail.com", username: "dummy", password: "dummy"))
+    }
+    
+    
     @IBAction func loginBtn(_ sender: Any) {
-        
-        
         
         guard let email = emailTxt.text, !email.isEmpty else {
             showAlert(title: "Email is empty", message: "Email must not be empty")
@@ -57,12 +62,16 @@ class LoginViewController: UIViewController {
         }
 
         for user in arrUser {
-            if(user.email != email || user.password != password){
-                showAlert(title: "Invalid Credential", message: "Email or Password is wrong")
-            }
+            if(user.email == email && user.password == password){
+                if let nextPage = storyboard?.instantiateViewController(withIdentifier: "tabBarView") as? HomeTabBarController{
+                    nextPage.emailCurrent = user.email
+                    self.navigationController?.pushViewController(nextPage, animated: true)
+                    showAlert(title: "Login Successful", message: "Welcome \(user.username)")
+                }
+            }            
         }
         
-        
+        showAlert(title: "Invalid Credential", message: "Email or Password is wrong")
     }
     
     func fetchUserData(){
