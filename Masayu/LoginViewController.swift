@@ -90,7 +90,7 @@ class LoginViewController: UIViewController {
             for data in results{
                 arrUser.append(user(
                     email: data.value(forKey: "email") as! String,
-                    username: data.value(forKey: "name") as! String,
+                    username: data.value(forKey: "username") as! String,
                     password: data.value(forKey: "password") as! String)
                 )
             }

@@ -117,6 +117,7 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
         let cellName = arrFood[indexPath.row].name
         let cellDistance = arrFood[indexPath.row].distance
         let cellPrice = "Rp. \(arrFood[indexPath.row].price)"
+        let priceInt = arrFood[indexPath.row].price
         let cellImage = arrFood[indexPath.row].image
         
         cell.labelName.text = cellName
@@ -133,7 +134,7 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
 
             newCart.setValue(tabBar.emailCurrent, forKey: "email")
             newCart.setValue(cellName, forKey: "foodName")
-            newCart.setValue(Int(cellPrice), forKey: "price")
+            newCart.setValue(priceInt, forKey: "price")
             newCart.setValue(cellImage, forKey: "image")
 
             do {

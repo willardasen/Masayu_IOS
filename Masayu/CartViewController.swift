@@ -33,27 +33,26 @@ class CartViewController: UIViewController,UITableViewDataSource,UITableViewDele
         super.viewDidLoad()
         
         let tabBar = tabBarController as! HomeTabBarController
-        
         email = tabBar.emailCurrent
         
-//        initCart()
-//        fetchUserCart()
         tvCart.dataSource = self
         tvCart.delegate = self
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         context = appDelegate.persistentContainer.viewContext
         
-        if context == (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
-            // Gunakan context di sini
-            print("fetched")
-        } else {
-            fatalError("Failed to obtain NSManagedObjectContext")
+        fetchUserCart()
+        
+        for data in arrCart {
+            print(data.name)
+            print(data.price)
         }
-        // Do any additional setup after loading the view.
+        
+        print("didload called")
     }
 
     func fetchUserCart(){
+        arrCart.removeAll()
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
 
         do{
@@ -92,6 +91,40 @@ class CartViewController: UIViewController,UITableViewDataSource,UITableViewDele
         cell.cartImage.image = UIImage(named: arrCart[indexPath.row].image)
         
         return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if(editingStyle == .delete){
+            let oldNameCart = arrCart[indexPath.row].name
+
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
+
+            request.predicate = NSPredicate(format: "email==%@ && foodName==%@", email, oldNameCart)
+
+            do{
+                let results = try context.fetch(request) as! [NSManagedObject]
+
+                for data in results{
+                    context.delete(data)
+                }
+
+                try context.save()
+
+                fetchUserCart()
+
+                for data in arrCart {
+                    print(data.name)
+                    print(data.price)
+                }
+            }catch{
+                print("Error deleting")
+            }
+        }
+    }
+
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
 
 }

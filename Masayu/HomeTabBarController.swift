@@ -15,6 +15,7 @@ class HomeTabBarController: UITabBarController {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
         print("Current email msk hahahaha: " + emailCurrent)
+        print("ini load di controller ")
         // Do any additional setup after loading the view.
     }
     
