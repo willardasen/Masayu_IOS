@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sHU-fo-zCq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vZT-fp-urH">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -478,8 +479,10 @@
                             <constraint firstItem="rkw-P9-43X" firstAttribute="bottom" secondItem="rcr-ob-8ac" secondAttribute="bottom" id="lRQ-KL-W4H"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" selectedImage="homekit" catalog="system" id="35K-fB-FOl">
-                        <color key="badgeColor" red="0.98645859960000004" green="0.98645859960000004" blue="0.98645859960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="35K-fB-FOl">
+                        <imageReference key="image" image="house" catalog="system" symbolScale="small"/>
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <imageReference key="selectedImage" image="homekit" catalog="system" symbolScale="small"/>
                     </tabBarItem>
                     <connections>
                         <outlet property="tvFood" destination="rcr-ob-8ac" id="UCC-ca-CNW"/>
@@ -671,7 +674,7 @@
                             <constraint firstItem="UKJ-AY-7dR" firstAttribute="leading" secondItem="0mj-kP-Eby" secondAttribute="leading" constant="25" id="U3f-EQ-kbK"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Cart" selectedImage="cart" catalog="system" id="uaz-df-7Vh">
+                    <tabBarItem key="tabBarItem" title="Cart" image="cart" catalog="system" selectedImage="cart" id="uaz-df-7Vh">
                         <color key="badgeColor" red="0.98645859960000004" green="0.98645859960000004" blue="0.98645859960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <connections>
@@ -692,7 +695,7 @@
                         <viewLayoutGuide key="safeArea" id="Vr0-Qg-Igw"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" selectedImage="magnifyingglass" catalog="system" id="bIW-MO-FlU">
+                    <tabBarItem key="tabBarItem" title="Settings" image="xmark.seal.fill" catalog="system" selectedImage="xmark.seal.fill" id="bIW-MO-FlU">
                         <color key="badgeColor" red="0.98645859960000004" green="0.98645859960000004" blue="0.98645859960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                 </viewController>
@@ -727,9 +730,10 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Lhd-II-UjN">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.12941176470588234" green="0.55009377000000004" blue="0.050533667210000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.12941176470588234" green="0.5490196078431373" blue="0.050980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.12941176470588234" green="0.5490196078431373" blue="0.050980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="Lkk-N5-Zme" kind="relationship" relationship="viewControllers" id="AK5-8g-MD1"/>
@@ -750,7 +754,8 @@
         <image name="Soto" width="190" height="130"/>
         <image name="cart" catalog="system" width="128" height="102"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="house" catalog="system" width="128" height="104"/>
+        <image name="xmark.seal.fill" catalog="system" width="128" height="124"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
