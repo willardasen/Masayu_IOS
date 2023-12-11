@@ -43,29 +43,36 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
         super.viewDidLoad()
         
         initFood()
-        storeData()
+//        storeData()
         tvFood.dataSource = self
         tvFood.delegate = self
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         context = appDelegate.persistentContainer.viewContext
+        
+        if context == (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            // Gunakan context di sini
+            print("fetched")
+        } else {
+            fatalError("Failed to obtain NSManagedObjectContext")
+        }
 
         // Do any additional setup after loading the view.
     }
     
     func storeData(){
-        
+
         let entityTarget = NSEntityDescription.entity(forEntityName: "Food", in: context)
-        
+
         let newFood = NSManagedObject(entity: entityTarget!, insertInto: context)
-        
+
         for food in arrFood {
             newFood.setValue(food.name, forKey: "foodName")
             newFood.setValue(food.image, forKey: "image")
             newFood.setValue(food.price, forKey: "price")
         }
-        
+
         do{
             try context.save()
             print("Save success")
@@ -121,14 +128,14 @@ class HomeViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         cell.handleInsert = {
             let entityTarget = NSEntityDescription.entity(forEntityName: "Cart", in: self.context)
-            
+
             let newCart = NSManagedObject(entity: entityTarget!, insertInto: self.context)
-            
+
             newCart.setValue(tabBar.emailCurrent, forKey: "email")
             newCart.setValue(cellName, forKey: "foodName")
-            newCart.setValue(cellPrice, forKey: "price")
+            newCart.setValue(Int(cellPrice), forKey: "price")
             newCart.setValue(cellImage, forKey: "image")
-            
+
             do {
                 try self.context.save()
                 print("Added to cart")
