@@ -132,4 +132,36 @@ class CartViewController: UIViewController,UITableViewDataSource,UITableViewDele
         fetchUserCart()
     }
 
+    @IBAction func confirmBtn(_ sender: Any) {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Cart")
+
+        request.predicate = NSPredicate(format: "email==%@", email)
+
+        do{
+            let results = try context.fetch(request) as! [NSManagedObject]
+
+            for data in results{
+                context.delete(data)
+            }
+            
+
+            try context.save()
+
+            fetchUserCart()
+            
+            showAlert(title: "Payment Success", message: "Thank you for shopping")
+        } catch{
+            print("Error deleting")
+        }
+    }
+    
+    
+    
+    
+    func showAlert(title: String,message: String) {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(okAction)
+            present(alertController, animated: true, completion: nil)
+    }
 }

@@ -23,6 +23,8 @@
 		05C1EAEA2B109B31009D9B42 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C1EAE92B109B31009D9B42 /* data.swift */; };
 		05C1EAEC2B10AEA6009D9B42 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C1EAEB2B10AEA6009D9B42 /* HomeTableViewCell.swift */; };
 		05D6B7002B218A9600AB870C /* FoodDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D6B6FF2B218A9600AB870C /* FoodDetailViewController.swift */; };
+		05EA73222B2816F30064946D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EA73212B2816F30064946D /* MapViewController.swift */; };
+		05EA73262B28246C0064946D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EA73252B28246C0064946D /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		05C1EAE92B109B31009D9B42 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
 		05C1EAEB2B10AEA6009D9B42 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		05D6B6FF2B218A9600AB870C /* FoodDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailViewController.swift; sourceTree = "<group>"; };
+		05EA73212B2816F30064946D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		05EA73252B28246C0064946D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,8 @@
 				0599AB292B1EDBC0000689E1 /* CartTableViewCell.swift */,
 				05D6B6FF2B218A9600AB870C /* FoodDetailViewController.swift */,
 				0503A91C2B2301B800BD2F35 /* HomeTabBarController.swift */,
+				05EA73212B2816F30064946D /* MapViewController.swift */,
+				05EA73252B28246C0064946D /* SettingsViewController.swift */,
 			);
 			path = Masayu;
 			sourceTree = "<group>";
@@ -176,11 +182,13 @@
 				05C1EAEA2B109B31009D9B42 /* data.swift in Sources */,
 				050047742B105874003F018F /* SceneDelegate.swift in Sources */,
 				05C1EAEC2B10AEA6009D9B42 /* HomeTableViewCell.swift in Sources */,
+				05EA73262B28246C0064946D /* SettingsViewController.swift in Sources */,
 				05C1EADE2B108255009D9B42 /* HomeViewController.swift in Sources */,
 				0599AB282B1EDB9D000689E1 /* CartViewController.swift in Sources */,
 				05C1EAD92B106E93009D9B42 /* RegisterViewController.swift in Sources */,
 				0500478B2B106B5C003F018F /* LoginViewController.swift in Sources */,
 				0500477C2B105874003F018F /* Masayu.xcdatamodeld in Sources */,
+				05EA73222B2816F30064946D /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
