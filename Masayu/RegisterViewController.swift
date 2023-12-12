@@ -77,6 +77,7 @@ class RegisterViewController: UIViewController {
         do{
             try context.save()
             print("Save successful")
+            showAlert(title: "Register Successful", message: "Your acccount has been registered")
         }catch{
             print("register error")
         }
