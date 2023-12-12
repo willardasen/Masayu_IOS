@@ -41,7 +41,7 @@ class CartViewController: UIViewController,UITableViewDataSource,UITableViewDele
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         context = appDelegate.persistentContainer.viewContext
         
-        fetchUserCart()
+//        fetchUserCart()
         
         for data in arrCart {
             print(data.name)
@@ -125,6 +125,11 @@ class CartViewController: UIViewController,UITableViewDataSource,UITableViewDele
 
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchUserCart()
     }
 
 }

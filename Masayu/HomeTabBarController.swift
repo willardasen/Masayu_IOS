@@ -19,5 +19,13 @@ class HomeTabBarController: UITabBarController {
         // Do any additional setup after loading the view.
     }
     
-
+    
 }
+//extension HomeTabBarController{
+//    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+//        if let navigationController = viewController as? UINavigationController,
+//           let cartViewController = navigationController.topViewController as? CartViewController{
+//            cartViewController.tvCart.reloadData()
+//        }
+//    }
+//}
