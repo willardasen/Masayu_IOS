@@ -746,6 +746,7 @@
                                     <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="onLogOutClick:" destination="UnW-e6-lgA" eventType="touchUpInside" id="2Qy-Vs-pDZ"/>
                                     <segue destination="T0d-XZ-anD" kind="show" id="mIi-T5-eur"/>
                                 </connections>
                             </button>

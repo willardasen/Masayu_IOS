@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 class RegisterViewController: UIViewController {
     
@@ -47,7 +48,6 @@ class RegisterViewController: UIViewController {
             return
         }
         
-        
         if username.count < 2{
             showAlert(title: "Username is less than 2 letters", message: "Username must at least has 2 letters")
         }
@@ -59,29 +59,39 @@ class RegisterViewController: UIViewController {
         if !(email.hasSuffix(".com") && email.contains("@")){
             showAlert(title: "Email is not valid", message: "Email must contain @ and ends with .com")
         }
-        
-        
-        
+
         if(arrUser.contains(email)){
             showAlert(title: "Email existed", message: "This email has already existed")
         }
         
-        let entityTarget = NSEntityDescription.entity(forEntityName: "User", in: context)
-        if(entityTarget != nil){
-            let newUser = NSManagedObject(entity: entityTarget!, insertInto: context)
-            newUser.setValue(username, forKey: "username")
-            newUser.setValue(email, forKey: "email")
-            newUser.setValue(password, forKey: "password")
+        if password.count < 6 {
+            showAlert(title: "Password too weak", message: "Password must be at least 6 character")
         }
         
-        do{
-            try context.save()
-            print("Save successful")
-            showAlert(title: "Register Successful", message: "Your acccount has been registered")
-        }catch{
-            print("register error")
+        // Firebase authentication
+        Auth.auth().createUser(withEmail: email, password: password) { [self] (firebaseResult, error) in
+            if let err = error {
+                print("Error in authentication \(err.localizedDescription)")
+                showAlert(title: "Error", message: "Cannot register")
+            }
+            else {
+                let entityTarget = NSEntityDescription.entity(forEntityName: "User", in: context)
+                if(entityTarget != nil){
+                    let newUser = NSManagedObject(entity: entityTarget!, insertInto: context)
+                    newUser.setValue(username, forKey: "username")
+                    newUser.setValue(email, forKey: "email")
+                    newUser.setValue(password, forKey: "password")
+                }
+                
+                do{
+                    try context.save()
+                    print("Save successful")
+                    showAlert(title: "Register Successful", message: "Your acccount has been registered, please login")
+                }catch{
+                    print("Register error")
+                }
+            }
         }
-        
     }
     
     func fetchUserData(){

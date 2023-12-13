@@ -7,8 +7,7 @@
 
 import UIKit
 import CoreData
-
-
+import Firebase
 
 struct user {
     var email: String
@@ -56,31 +55,29 @@ class LoginViewController: UIViewController {
             return
         }
         
-        
-        if(email == "admin" && password == "admin"){
-            if let nextPage = storyboard?.instantiateViewController(withIdentifier: "adminView"){
-                self.navigationController?.pushViewController(nextPage, animated: true)
-            }
-            showAlert(title: "Login success", message: "Welcome, Admin")
-        }
-        
         if !(email.hasSuffix(".com") && email.contains("@")) {
             showAlert(title: "Email is not valid", message: "Email must contain @ and ends with .com")
         }
-
-        for user in arrUser {
-            if (user.email == email && user.password == password) {
-                print(user.email)
-                print(user.password)
-                if let nextPage = storyboard?.instantiateViewController(withIdentifier: "tabBarView") as? HomeTabBarController{
-                    nextPage.emailCurrent = user.email
-                    self.navigationController?.pushViewController(nextPage, animated: true)
-                    showAlert(title: "Login Successful", message: "Welcome, \(user.username)")
+        
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+            guard let strongSelf = self else { return }
+            
+            if let err = error {
+                strongSelf.showAlert(title: "Invalid Credential", message: "Email or Password is wrong")
+                print("Email or Password is wrong \(err.localizedDescription)")
+            }
+            
+            for user in strongSelf.arrUser {
+                if (user.email == email && user.password == password) {
+                    if let nextPage = strongSelf.storyboard?.instantiateViewController(withIdentifier: "tabBarView") as? HomeTabBarController{
+                        nextPage.emailCurrent = user.email
+                        strongSelf.navigationController?.pushViewController(nextPage, animated: true)
+                        strongSelf.showAlert(title: "Login Successful", message: "Welcome, \(user.username)")
+                    }
                 }
             }
         }
-        
-        showAlert(title: "Invalid Credential", message: "Email or Password is wrong")
+
     }
     
     func fetchUserData(){
