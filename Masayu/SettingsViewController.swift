@@ -20,6 +20,10 @@ class SettingsViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var emailLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

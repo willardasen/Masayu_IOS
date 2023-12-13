@@ -551,7 +551,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ygz-S5-1Bm">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Gordon" translatesAutoresizingMaskIntoConstraints="NO" id="ygz-S5-1Bm">
                                 <rect key="frame" x="16" y="520" width="355" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -739,8 +739,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9k-53-3ce">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9k-53-3ce">
                                 <rect key="frame" x="155.66666666666666" y="408.66666666666669" width="82" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Log out">
                                     <color key="baseBackgroundColor" systemColor="systemRedColor"/>
@@ -750,17 +751,52 @@
                                     <segue destination="T0d-XZ-anD" kind="show" id="mIi-T5-eur"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="88D-Wh-X4R">
+                                <rect key="frame" x="180" y="118" width="197" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="197" id="hyK-Fi-Zdk"/>
+                                    <constraint firstAttribute="height" constant="48" id="pPJ-wV-0LY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Si4-Hr-o1N">
+                                <rect key="frame" x="0.0" y="109" width="172" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="129.33000000000001" id="NIo-1X-tAa"/>
+                                    <constraint firstAttribute="width" constant="172" id="aEO-ND-ANN"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19V-t6-zCc">
+                                <rect key="frame" x="180" y="174" width="197" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="O3V-2o-D2T"/>
+                                    <constraint firstAttribute="width" constant="197" id="Q4Y-Xa-bd8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Vr0-Qg-Igw"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="I9k-53-3ce" firstAttribute="centerX" secondItem="OUH-37-ZJ6" secondAttribute="centerX" id="2AY-tO-Rpt"/>
-                            <constraint firstItem="I9k-53-3ce" firstAttribute="centerY" secondItem="OUH-37-ZJ6" secondAttribute="centerY" id="WGy-12-mVI"/>
+                            <constraint firstItem="19V-t6-zCc" firstAttribute="top" secondItem="88D-Wh-X4R" secondAttribute="bottom" constant="8" symbolic="YES" id="24D-Xo-OsL"/>
+                            <constraint firstItem="Vr0-Qg-Igw" firstAttribute="trailing" secondItem="88D-Wh-X4R" secondAttribute="trailing" constant="16" id="E0H-gn-Kfj"/>
+                            <constraint firstItem="Si4-Hr-o1N" firstAttribute="top" secondItem="Vr0-Qg-Igw" secondAttribute="top" constant="49" id="FPW-Y5-5To"/>
+                            <constraint firstItem="Vr0-Qg-Igw" firstAttribute="trailing" secondItem="19V-t6-zCc" secondAttribute="trailing" constant="16" id="Nq6-ng-kxi"/>
+                            <constraint firstItem="88D-Wh-X4R" firstAttribute="top" secondItem="Vr0-Qg-Igw" secondAttribute="top" constant="59" id="cQK-JC-KXQ"/>
+                            <constraint firstItem="Si4-Hr-o1N" firstAttribute="leading" secondItem="Vr0-Qg-Igw" secondAttribute="leading" id="z0s-Iv-fBn"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="xmark.seal.fill" catalog="system" selectedImage="xmark.seal.fill" id="bIW-MO-FlU">
                         <color key="badgeColor" red="0.98645859960000004" green="0.98645859960000004" blue="0.98645859960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="emailLabel" destination="19V-t6-zCc" id="Tvc-VY-PRF"/>
+                        <outlet property="nameLabel" destination="88D-Wh-X4R" id="7Jg-WG-loj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gjm-1r-y7E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -814,11 +850,13 @@
         <segue reference="mIi-T5-eur"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="Gordon" width="310" height="163"/>
         <image name="Masayu" width="393" height="235"/>
         <image name="Soto" width="190" height="130"/>
         <image name="cart" catalog="system" width="128" height="102"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
         <image name="house" catalog="system" width="128" height="104"/>
+        <image name="person.crop.circle" catalog="system" width="128" height="123"/>
         <image name="xmark.seal.fill" catalog="system" width="128" height="124"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
