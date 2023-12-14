@@ -71,6 +71,7 @@ class LoginViewController: UIViewController {
                 if (user.email == email && user.password == password) {
                     if let nextPage = strongSelf.storyboard?.instantiateViewController(withIdentifier: "tabBarView") as? HomeTabBarController{
                         nextPage.emailCurrent = user.email
+                        nextPage.usernameCurrent = user.username
                         strongSelf.navigationController?.pushViewController(nextPage, animated: true)
                         strongSelf.showAlert(title: "Login Successful", message: "Welcome, \(user.username)")
                     }

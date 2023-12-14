@@ -26,6 +26,9 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tabBar = tabBarController as! HomeTabBarController
+        nameLabel.text = tabBar.usernameCurrent
+        emailLabel.text = tabBar.emailCurrent
 
         // Do any additional setup after loading the view.
     }
